@@ -1,0 +1,122 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+import type { ImageMetadata } from 'astro';
+import FallbackImage from '../assets/blog-placeholder-1.jpg';
+import { Font } from 'astro:assets';
+import { withBase } from '../utils';
+
+interface Props {
+	title: string;
+	description: string;
+	image?: ImageMetadata;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = FallbackImage } = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+<link rel="icon" href={withBase('/favicon.ico')} />
+<link rel="sitemap" href={withBase('/sitemap-index.xml')} />
+<meta name="generator" content={Astro.generator} />
+
+<Font cssVariable="--font-titles" preload />
+<Font cssVariable="--font-text" preload />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image.src, Astro.url)} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Applique le thème avant le premier rendu pour éviter un flash clair/sombre -->
+<script is:inline>
+	const stored = localStorage.getItem('theme');
+	const theme =
+		stored === 'light' || stored === 'dark'
+			? stored
+			: window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
+				: 'light';
+	document.documentElement.dataset.theme = theme;
+</script>
+
+<!-- Aperçu des cartes mentionnées au survol -->
+<script>
+	const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+	let tip: HTMLDivElement | null = null;
+
+	function ensureTip(): HTMLDivElement {
+		if (!tip) {
+			tip = document.createElement('div');
+			tip.id = 'card-preview';
+			tip.setAttribute('aria-hidden', 'true');
+			tip.appendChild(document.createElement('img'));
+			document.body.appendChild(tip);
+		}
+		return tip;
+	}
+
+	function show(link: HTMLAnchorElement) {
+		const slug = link.dataset.card;
+		if (!slug) return;
+		const el = ensureTip();
+		const img = el.querySelector('img')!;
+		const src = `${base}/images/cartes/${slug}.jpg`;
+		if (img.getAttribute('src') !== src) {
+			img.setAttribute('src', src);
+			img.setAttribute('alt', link.title || slug);
+		}
+		el.classList.add('visible');
+		position(el, link);
+	}
+
+	function position(el: HTMLDivElement, link: HTMLAnchorElement) {
+		const rect = link.getBoundingClientRect();
+		const width = 240;
+		const height = width * (473 / 296); // Dominion card aspect ratio
+		const margin = 8;
+		let left = rect.left + rect.width / 2 - width / 2;
+		left = Math.max(margin, Math.min(left, window.innerWidth - width - margin));
+		// Above the link if there is room, otherwise below.
+		let top = rect.top - height - margin;
+		if (top < margin) top = Math.min(rect.bottom + margin, window.innerHeight - height - margin);
+		el.style.left = `${left}px`;
+		el.style.top = `${top}px`;
+	}
+
+	function hide() {
+		tip?.classList.remove('visible');
+	}
+
+	document.addEventListener('mouseover', (event) => {
+		const link = (event.target as Element).closest?.('a.card-mention');
+		if (link instanceof HTMLAnchorElement) show(link);
+	});
+	document.addEventListener('mouseout', (event) => {
+		if ((event.target as Element).closest?.('a.card-mention')) hide();
+	});
+	document.addEventListener('focusin', (event) => {
+		const link = (event.target as Element).closest?.('a.card-mention');
+		if (link instanceof HTMLAnchorElement) show(link);
+	});
+	document.addEventListener('focusout', hide);
+	document.addEventListener('scroll', hide, { passive: true });
+</script>

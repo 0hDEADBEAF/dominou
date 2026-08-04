@@ -1,0 +1,299 @@
+[
+	{
+		"slug": "cuivre",
+		"nameFr": "Cuivre",
+		"nameEn": "Copper",
+		"types": ["Trésor"],
+		"cost": 0,
+		"textFr": "1 Pièce",
+		"image": "cuivre.jpg"
+	},
+	{
+		"slug": "argent",
+		"nameFr": "Argent",
+		"nameEn": "Silver",
+		"types": ["Trésor"],
+		"cost": 3,
+		"textFr": "2 Pièces",
+		"image": "argent.jpg"
+	},
+	{
+		"slug": "or",
+		"nameFr": "Or",
+		"nameEn": "Gold",
+		"types": ["Trésor"],
+		"cost": 6,
+		"textFr": "3 Pièces",
+		"image": "or.jpg"
+	},
+	{
+		"slug": "domaine",
+		"nameFr": "Domaine",
+		"nameEn": "Estate",
+		"types": ["Victoire"],
+		"cost": 2,
+		"textFr": "1 PV",
+		"image": "domaine.jpg"
+	},
+	{
+		"slug": "duche",
+		"nameFr": "Duché",
+		"nameEn": "Duchy",
+		"types": ["Victoire"],
+		"cost": 5,
+		"textFr": "3 PV",
+		"image": "duche.jpg"
+	},
+	{
+		"slug": "province",
+		"nameFr": "Province",
+		"nameEn": "Province",
+		"types": ["Victoire"],
+		"cost": 8,
+		"textFr": "6 PV",
+		"image": "province.jpg"
+	},
+	{
+		"slug": "malediction",
+		"nameFr": "Malédiction",
+		"nameEn": "Curse",
+		"types": ["Malédiction"],
+		"cost": 0,
+		"textFr": "−1 PV",
+		"image": "malediction.jpg"
+	},
+	{
+		"slug": "cave",
+		"nameFr": "Cave",
+		"nameEn": "Cellar",
+		"types": ["Action"],
+		"cost": 2,
+		"textFr": "+1 Action. Défaussez autant de cartes que vous voulez, puis piochez-en autant.",
+		"image": "cave.jpg"
+	},
+	{
+		"slug": "chapelle",
+		"nameFr": "Chapelle",
+		"nameEn": "Chapel",
+		"types": ["Action"],
+		"cost": 2,
+		"textFr": "Écartez jusqu'à 4 cartes de votre main.",
+		"image": "chapelle.jpg"
+	},
+	{
+		"slug": "douves",
+		"nameFr": "Douves",
+		"nameEn": "Moat",
+		"types": ["Action", "Réaction"],
+		"cost": 2,
+		"textFr": "+2 Cartes. — Lorsqu'un adversaire joue une carte Attaque, vous pouvez d'abord révéler cette carte de votre main pour être protégé des effets de cette attaque.",
+		"image": "douves.jpg"
+	},
+	{
+		"slug": "messagere",
+		"nameFr": "Messagère",
+		"nameEn": "Harbinger",
+		"types": ["Action"],
+		"cost": 3,
+		"textFr": "+1 Carte, +1 Action. Regardez dans votre défausse. Vous pouvez y prendre une carte et la placer sur votre pioche.",
+		"image": "messagere.jpg"
+	},
+	{
+		"slug": "marchand",
+		"nameFr": "Marchand",
+		"nameEn": "Merchant",
+		"types": ["Action"],
+		"cost": 3,
+		"textFr": "+1 Carte, +1 Action. La première fois que vous jouez un Argent à ce tour : +1 Pièce.",
+		"image": "marchand.jpg"
+	},
+	{
+		"slug": "vassal",
+		"nameFr": "Vassal",
+		"nameEn": "Vassal",
+		"types": ["Action"],
+		"cost": 3,
+		"textFr": "+2 Pièces. Défaussez la carte du dessus de votre pioche. Si c'est une carte Action, vous pouvez la jouer.",
+		"image": "vassal.jpg"
+	},
+	{
+		"slug": "village",
+		"nameFr": "Village",
+		"nameEn": "Village",
+		"types": ["Action"],
+		"cost": 3,
+		"textFr": "+1 Carte, +2 Actions.",
+		"image": "village.jpg"
+	},
+	{
+		"slug": "atelier",
+		"nameFr": "Atelier",
+		"nameEn": "Workshop",
+		"types": ["Action"],
+		"cost": 3,
+		"textFr": "Recevez une carte coûtant jusqu'à 4.",
+		"image": "atelier.jpg"
+	},
+	{
+		"slug": "bureaucrate",
+		"nameFr": "Bureaucrate",
+		"nameEn": "Bureaucrat",
+		"types": ["Action", "Attaque"],
+		"cost": 4,
+		"textFr": "Recevez un Argent sur votre pioche. Chaque adversaire révèle une carte Victoire de sa main et la place sur sa pioche (ou révèle une main sans carte Victoire).",
+		"image": "bureaucrate.jpg"
+	},
+	{
+		"slug": "jardins",
+		"nameFr": "Jardins",
+		"nameEn": "Gardens",
+		"types": ["Victoire"],
+		"cost": 4,
+		"textFr": "Vaut 1 PV par tranche de 10 cartes dans votre deck (arrondi à l'inférieur).",
+		"image": "jardins.jpg"
+	},
+	{
+		"slug": "milice",
+		"nameFr": "Milice",
+		"nameEn": "Militia",
+		"types": ["Action", "Attaque"],
+		"cost": 4,
+		"textFr": "+2 Pièces. Chaque adversaire défausse pour ne conserver que 3 cartes en main.",
+		"image": "milice.jpg"
+	},
+	{
+		"slug": "preteur-sur-gages",
+		"nameFr": "Prêteur sur gages",
+		"nameEn": "Moneylender",
+		"types": ["Action"],
+		"cost": 4,
+		"textFr": "Vous pouvez écarter un Cuivre de votre main pour +3 Pièces.",
+		"image": "preteur-sur-gages.jpg"
+	},
+	{
+		"slug": "braconnier",
+		"nameFr": "Braconnier",
+		"nameEn": "Poacher",
+		"types": ["Action"],
+		"cost": 4,
+		"textFr": "+1 Carte, +1 Action, +1 Pièce. Défaussez une carte par pile de la réserve vide.",
+		"image": "braconnier.jpg"
+	},
+	{
+		"slug": "renovation",
+		"nameFr": "Rénovation",
+		"nameEn": "Remodel",
+		"types": ["Action"],
+		"cost": 4,
+		"textFr": "Écartez une carte de votre main. Recevez une carte coûtant jusqu'à 2 de plus que la carte écartée.",
+		"image": "renovation.jpg"
+	},
+	{
+		"slug": "forgeron",
+		"nameFr": "Forgeron",
+		"nameEn": "Smithy",
+		"types": ["Action"],
+		"cost": 4,
+		"textFr": "+3 Cartes.",
+		"image": "forgeron.jpg"
+	},
+	{
+		"slug": "salle-du-trone",
+		"nameFr": "Salle du trône",
+		"nameEn": "Throne Room",
+		"types": ["Action"],
+		"cost": 4,
+		"textFr": "Vous pouvez jouer une carte Action de votre main deux fois.",
+		"image": "salle-du-trone.jpg"
+	},
+	{
+		"slug": "bandit",
+		"nameFr": "Bandit",
+		"nameEn": "Bandit",
+		"types": ["Action", "Attaque"],
+		"cost": 5,
+		"textFr": "Recevez un Or. Chaque adversaire révèle les 2 premières cartes de sa pioche, écarte un Trésor révélé autre qu'un Cuivre et défausse le reste.",
+		"image": "bandit.jpg"
+	},
+	{
+		"slug": "chambre-du-conseil",
+		"nameFr": "Chambre du conseil",
+		"nameEn": "Council Room",
+		"types": ["Action"],
+		"cost": 5,
+		"textFr": "+4 Cartes, +1 Achat. Chaque adversaire pioche une carte.",
+		"image": "chambre-du-conseil.jpg"
+	},
+	{
+		"slug": "festival",
+		"nameFr": "Festival",
+		"nameEn": "Festival",
+		"types": ["Action"],
+		"cost": 5,
+		"textFr": "+2 Actions, +1 Achat, +2 Pièces.",
+		"image": "festival.jpg"
+	},
+	{
+		"slug": "laboratoire",
+		"nameFr": "Laboratoire",
+		"nameEn": "Laboratory",
+		"types": ["Action"],
+		"cost": 5,
+		"textFr": "+2 Cartes, +1 Action.",
+		"image": "laboratoire.jpg"
+	},
+	{
+		"slug": "bibliotheque",
+		"nameFr": "Bibliothèque",
+		"nameEn": "Library",
+		"types": ["Action"],
+		"cost": 5,
+		"textFr": "Piochez jusqu'à avoir 7 cartes en main, en mettant de côté les cartes Action que vous ne souhaitez pas garder. Défaussez-les ensuite.",
+		"image": "bibliotheque.jpg"
+	},
+	{
+		"slug": "marche",
+		"nameFr": "Marché",
+		"nameEn": "Market",
+		"types": ["Action"],
+		"cost": 5,
+		"textFr": "+1 Carte, +1 Action, +1 Achat, +1 Pièce.",
+		"image": "marche.jpg"
+	},
+	{
+		"slug": "mine",
+		"nameFr": "Mine",
+		"nameEn": "Mine",
+		"types": ["Action"],
+		"cost": 5,
+		"textFr": "Vous pouvez écarter un Trésor de votre main. Recevez en main un Trésor coûtant jusqu'à 3 de plus.",
+		"image": "mine.jpg"
+	},
+	{
+		"slug": "sentinelle",
+		"nameFr": "Sentinelle",
+		"nameEn": "Sentry",
+		"types": ["Action"],
+		"cost": 5,
+		"textFr": "+1 Carte, +1 Action. Regardez les 2 premières cartes de votre pioche. Écartez et/ou défaussez celles de votre choix. Replacez le reste dans l'ordre de votre choix.",
+		"image": "sentinelle.jpg"
+	},
+	{
+		"slug": "sorciere",
+		"nameFr": "Sorcière",
+		"nameEn": "Witch",
+		"types": ["Action", "Attaque"],
+		"cost": 5,
+		"textFr": "+2 Cartes. Chaque adversaire reçoit une Malédiction.",
+		"image": "sorciere.jpg"
+	},
+	{
+		"slug": "artisan",
+		"nameFr": "Artisan",
+		"nameEn": "Artisan",
+		"types": ["Action"],
+		"cost": 6,
+		"textFr": "Recevez en main une carte coûtant jusqu'à 5. Placez une carte de votre main sur votre pioche.",
+		"image": "artisan.jpg"
+	}
+]

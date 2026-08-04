@@ -1,0 +1,54 @@
+<button id="theme-toggle" aria-label="Changer de thème" title="Changer de thème">
+	<svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+		<path
+			fill="currentColor"
+			d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V2a1 1 0 0 1 1-1zm0 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM3.5 4.9A1 1 0 0 1 4.9 3.5l.7.7A1 1 0 0 1 4.2 5.6l-.7-.7zm14.9 14.9a1 1 0 0 1 1.4-1.4l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7zM1 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H2a1 1 0 0 1-1-1zm19 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM4.9 20.5a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 1.4l-.7.7zM19.8 5.6a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 1 1 1.4 1.4l-.7.7z"
+		></path>
+	</svg>
+	<svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+		<path
+			fill="currentColor"
+			d="M21.6 14.4A9 9 0 0 1 9.6 2.4 9 9 0 1 0 21.6 14.4zm-2.9 1.5A11 11 0 0 1 8.1 5.3 7 7 0 1 0 18.7 15.9z"
+		></path>
+	</svg>
+</button>
+
+<style>
+	button {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.4em;
+		border: none;
+		border-radius: 50%;
+		background: transparent;
+		color: rgb(var(--gray-dark));
+		cursor: pointer;
+	}
+	button:hover {
+		color: var(--accent);
+	}
+	.icon-moon {
+		display: none;
+	}
+	:global(:root[data-theme='dark']) .icon-sun {
+		display: none;
+	}
+	:global(:root[data-theme='dark']) .icon-moon {
+		display: block;
+	}
+</style>
+
+<script>
+	document.getElementById('theme-toggle')?.addEventListener('click', () => {
+		const root = document.documentElement;
+		const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+		root.dataset.theme = next;
+		localStorage.setItem('theme', next);
+		// Keep the giscus comment frame (if present) in sync.
+		const giscus = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+		giscus?.contentWindow?.postMessage(
+			{ giscus: { setConfig: { theme: next } } },
+			'https://giscus.app',
+		);
+	});
+</script>

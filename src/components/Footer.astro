@@ -1,0 +1,29 @@
+---
+const today = new Date();
+---
+
+<footer>
+	<p>
+		&copy; {today.getFullYear()} Dominou — Blog personnel sur Dominion.
+	</p>
+	<p class="notice">
+		Dominion est un jeu de Donald X. Vaccarino, édité par Rio Grande Games.
+		Les images de cartes sont utilisées à titre illustratif ; tous droits
+		réservés à leurs ayants droit. Ce site n'est pas affilié aux éditeurs.
+	</p>
+</footer>
+<style>
+	footer {
+		padding: 2em 1em 4em 1em;
+		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	p {
+		margin: 0 auto 0.5em;
+		max-width: 720px;
+	}
+	.notice {
+		font-size: 0.8em;
+	}
+</style>
